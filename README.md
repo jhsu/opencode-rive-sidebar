@@ -13,26 +13,19 @@ scene.
 
 ## Install
 
-The plugin isn't on npm yet, so build it from a checkout:
-
 ```sh
-git clone https://github.com/jhsu/opencode-rive-sidebar.git
-cd opencode-rive-sidebar
-pnpm install
-pnpm build
+opencode plugin add opencode-rive-sidebar
 ```
 
-Then add the checkout's path to your global config, `~/.config/opencode/opencode.jsonc`:
+Or add it to your global config, `~/.config/opencode/opencode.json(c)`:
 
 ```jsonc
 {
-  "plugins": ["/path/to/opencode-rive-sidebar"],
+  "plugins": ["opencode-rive-sidebar"],
 }
 ```
 
-`opencode plugin add` with a Git URL doesn't work for this package. It fails with `git dep preparation failed`.
-
-Once it's published to npm, use the package name instead: `"plugins": ["opencode-rive-sidebar"]`.
+Install from npm rather than a Git URL. `opencode plugin add` with a Git URL fails with `git dep preparation failed`.
 
 ## Use
 
@@ -89,11 +82,16 @@ project with `.luau`, `.as`, or `.wgsl` sources shows a note with two ways forwa
 ## Develop
 
 ```sh
+git clone https://github.com/jhsu/opencode-rive-sidebar.git
+cd opencode-rive-sidebar
 pnpm install
 pnpm dev        # vite build --watch; each rebuild reloads the plugin in the app
 pnpm typecheck
 pnpm test
 ```
+
+To load your checkout, put its path in `plugins` in your global config, for example
+`"plugins": ["/path/to/opencode-rive-sidebar"]`.
 
 Add a changeset with each change, with `pnpm changeset`. Merging to `main` opens a version PR, and merging that PR
 publishes to npm. The workflow needs an `NPM_TOKEN` repository secret.
