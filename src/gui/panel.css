@@ -1,0 +1,117 @@
+.ocrive {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  color: var(--text-base);
+  font-size: 13px;
+}
+
+.ocrive-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border-weak-base);
+}
+
+.ocrive-title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.ocrive-name {
+  overflow: hidden;
+  color: var(--text-strong);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ocrive-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-weak);
+  font-size: 11px;
+}
+
+.ocrive[data-status="failed"] .ocrive-status {
+  color: var(--text-error);
+}
+
+.ocrive-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: var(--background-stronger);
+}
+
+.ocrive-hidden {
+  display: none;
+}
+
+.ocrive-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.ocrive-empty {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  color: var(--text-weak);
+  text-align: center;
+}
+
+.ocrive-note {
+  flex: none;
+  padding: 8px;
+  border-top: 1px solid var(--border-weak-base);
+  color: var(--text-weak);
+}
+
+.ocrive-note p {
+  margin: 0 0 8px;
+}
+
+.ocrive-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ocrive-problems {
+  flex: none;
+  max-height: 35%;
+  margin: 0;
+  padding: 8px;
+  overflow: auto;
+  border-top: 1px solid var(--border-weak-base);
+  list-style: none;
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.ocrive-problems li + li {
+  margin-top: 6px;
+}
+
+.ocrive-problems li[data-severity="error"] {
+  color: var(--text-error);
+}
+
+.ocrive-problems li[data-severity="warning"] {
+  color: var(--text-weak);
+}

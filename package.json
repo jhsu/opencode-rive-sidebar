@@ -1,0 +1,53 @@
+{
+  "name": "opencode-rive-sidebar",
+  "version": "0.0.0",
+  "description": "Live Rive preview in an OpenCode Desktop side panel",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "rive"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3",
+    "@opencode/plugin": "2.2.5",
+    "@rive-app/webgl2": "2.49.0",
+    "@types/node": "^26.6.6",
+    "effect": "4.0.6",
+    "electron": "^44.10.1",
+    "solid-js": "^1.9.18",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.7",
+    "vite-plugin-solid": "^2.11.15",
+    "vitest": "^5.0.5"
+  },
+  "packageManager": "pnpm@12.16.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Joe Hsu",
+  "homepage": "https://github.com/jhsu/opencode-rive-sidebar#readme",
+  "bugs": {
+    "url": "https://github.com/jhsu/opencode-rive-sidebar/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhsu/opencode-rive-sidebar.git"
+  }
+}
